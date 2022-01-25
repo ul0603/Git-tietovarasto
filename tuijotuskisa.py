@@ -60,12 +60,17 @@ class Peikko:
 ### Kirjoita luokka Sankari tähän.
 class Sankari:
 
-    nimi=input("Mikä on sankarin nimi?: ")
+    nimi=input("Sankari nimi: ")
+    hurraukset = ["hurraa", "jippii", "mahtavaa", "Wohoo", "JES!"]
 
-    def _init_(self, nimi):
+    def __init__(self):
         self.nimi = nimi
         self.rohkeus = random.randint(2, 8)
         self.katseen_voima = random.randint(2, 6)
+
+    def arvo_hurraus(self):
+    
+        return self.random.choice(hurraukset)
 
 
 def hurraa(olio):

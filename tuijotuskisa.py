@@ -64,6 +64,8 @@ class Sankari:
 
     def _init_(self, nimi):
         self.nimi = nimi
+        self.rohkeus = random.randint(2, 8)
+        self.katseen_voima = random.randint(2, 6)
 
 
 def hurraa(olio):

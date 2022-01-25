@@ -58,6 +58,12 @@ class Peikko:
 
 
 ### Kirjoita luokka Sankari tähän.
+class Sankari:
+
+    nimi=input("Mikä on sankarin nimi?: ")
+
+    def _init_(self, nimi):
+        self.nimi = nimi
 
 
 def hurraa(olio):

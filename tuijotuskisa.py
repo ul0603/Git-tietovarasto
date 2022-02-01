@@ -1,6 +1,11 @@
 import random
 import time
 
+class Olento:
+    def _init_(self, nimi, rohkeus, katseen_voima):
+        self.nimi = nimi
+        self.rohkeus = rohkeus
+        self.katseen_voima = katseen_voima
 
 class Peikko:
     """Luokka, joka kuvaa Peikon.

@@ -6,6 +6,7 @@ class Olento:
         self.nimi = nimi
         self.rohkeus = rohkeus
         self.katseen_voima = katseen_voima
+    
 
 class Peikko(Olento):
     """Luokka, joka kuvaa Peikon.
@@ -60,13 +61,20 @@ class Peikko(Olento):
         :rtype: str
         """
         return self._arvo_sanat(self.RIEMUTAVUT, 8, " ", 0.7)
-    
+
+
 class Vuorenpeikko(Peikko):
+
+
+    super()._init_(nimi, rohkeus, katseen_voima)    
+        
 
 
 
 
 class Luolapeikko(Peikko):
+    super()._init_(nimi, rohkeus, katseen_voima)
+     
 
 
 ### Kirjoita luokka Sankari tähän.
@@ -104,25 +112,10 @@ class Sankari(Olento):
         huraa = random.choice(hurraukset)
     
         return huraa
+        
+
     
 
-    def __init__(self, nimi):
-        """Konstruktori."""
-        self.nimi = nimi
-        self.rohkeus = random.randint(2, 8)
-        self.katseen_voima = random.randint(2, 6)
-    
-
-    def arvo_hurraus():
-        hurraukset = ["hurraa", "jippii", "mahtavaa", "Wohoo", "JES!"]
-        huraa = random.choice(hurraukset)
-        """Palauttaa satunnaisen hurraushuudahduksen.
-
-        :return: hurraava huudahdus
-        :rtype: str
-        """
-    
-        return huraa
 
 def hurraa(olio):
     """Tulostaa satunnaisen hurrauksen annetulle oliolle.
@@ -203,7 +196,8 @@ while sankari.rohkeus > 0:
     time.sleep(0.7)
 
     # Tulostetaan vastaan tulevan peikon tiedot.
-    peikko = Peikko()
+    peikot = (Peikko, Luolapeikko, Vuorenpeikko)
+    peikko = random.choice(peikot)
     peikon_tiedot = peikko.nimi + " [" + str(peikko.rohkeus) + "]"
     print("Vastaan tulee hurja %s!" % peikon_tiedot)
     time.sleep(1)

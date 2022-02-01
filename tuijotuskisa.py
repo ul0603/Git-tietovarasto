@@ -7,7 +7,7 @@ class Olento:
         self.rohkeus = rohkeus
         self.katseen_voima = katseen_voima
 
-class Peikko:
+class Peikko(Olento):
     """Luokka, joka kuvaa Peikon.
 
     :ivar nimi: peikon nimi, arvotaan
@@ -60,10 +60,17 @@ class Peikko:
         :rtype: str
         """
         return self._arvo_sanat(self.RIEMUTAVUT, 8, " ", 0.7)
+    
+class Vuorenpeikko(Peikko):
+
+
+
+
+class Luolapeikko(Peikko):
 
 
 ### Kirjoita luokka Sankari tähän.
-class Sankari:
+class Sankari(Olento):
     """Luokka, joka kuvaa Sankarin.
 
     :ivar nimi: sankarin nimi, pelaaja päättää

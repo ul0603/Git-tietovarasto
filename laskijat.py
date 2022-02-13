@@ -35,7 +35,8 @@ class Laskija:
 
 
 ### Lisää MonenLaskija ja argumenttien_tulostaja tähän.
-
+    class Monenlaskija(Laskija):
+            pass
 
 
 

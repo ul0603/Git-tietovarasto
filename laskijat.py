@@ -6,9 +6,9 @@ class Laskija:
         kerro(Union[int, float], Union[int, float])
     """
 
-    def summaa(self, a, b):
+    def summaa(numerot):
         """Palauttaa kahden luvun summan.
-
+        
         :param a: summan ensimmäinen luku
         :type a: Union[int, float]
         :param b: summan toinen luku
@@ -16,9 +16,10 @@ class Laskija:
         :return: lukujen a ja b summa
         :rtype: Union[int, float]
         """
-        return sum([a, b])
+        numerot = input("Summattavat luvut: ")
+        return sum(numerot)
 
-    def kerro(self, a, b):
+    def kerro(numerot):
         """Palauttaa kahden luvun tulon.
 
         :param a: tulon ensimmäinen luku
@@ -28,15 +29,19 @@ class Laskija:
         :return: lukujen a ja b tulo
         :rtype: Union[int, float]
         """
+        numerot = ("Kerrottavat luvut: ")
         tulo = 1
-        for luku in [a, b]:
+        for luku in (numerot):
             tulo *= luku
         return tulo
 
 
 ### Lisää MonenLaskija ja argumenttien_tulostaja tähän.
-    class Monenlaskija(Laskija):
-            pass
+class MonenLaskija(Laskija):
+    pass
+
+def argumenttien_tulostaja:
+    pass
 
 
 

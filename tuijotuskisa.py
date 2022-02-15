@@ -69,13 +69,29 @@ class Peikko(Olento):
 
 
 class Vuorenpeikko(Peikko):
+    """Luokka, joka kuvaa Peikon.
+
+    :ivar nimi: peikon nimi, arvotaan sen omista NIMITAVUT muuttujasta
+    :type nimi: str
+    :ivar rohkeus: peikon rohkeus, arvotaan 
+    :type rohkeus: int
+    :ivar katseen_voima: peikon katseen voimakkuus, arvotaan
+    :type katseen_voima: int
+
+    Julkiset metodit
+        arvo_hurraus()
+    """
+
+
 
     NIMITAVUT = ("Kaa", "Woo", "Räyh")
     RIEMUTAVUT = ("Huz", "Rär", "Woh")
 
     def __init__(self):
         super().__init__(3, 5)
-        
+    """Luo itsensä ja antaa itselleen arvot rohkeus ja katseen_voima
+    type: str ja rohkeus ja katseen_voima = int
+    """
     
 
      
@@ -85,13 +101,29 @@ class Vuorenpeikko(Peikko):
 
 
 class Luolapeikko(Peikko):
+    """Luokka, joka kuvaa Peikon.
+
+    :ivar nimi: peikon nimi, arvotaan sen omista NIMITAVUT muuttujasta
+    :type nimi: str
+    :ivar rohkeus: peikon rohkeus, arvotaan 
+    :type rohkeus: int
+    :ivar katseen_voima: peikon katseen voimakkuus, arvotaan
+    :type katseen_voima: int
+
+    Julkiset metodit
+        arvo_hurraus()
+    """
+
+
     NIMITAVUT = ("Yh", "PÅ", "JAa")
     RIEMUTAVUT = ("Huz", "zah", "The")
 
     def __init__(self):
      super().__init__(4, 6)
+    """Luo itsensä ja antaa itselleen arvot rohkeus ja katseen_voima
+    type: str ja rohkeus ja katseen_voima = int
+    """
     
-
 
 ### Kirjoita luokka Sankari tähän.
 class Sankari(Olento):

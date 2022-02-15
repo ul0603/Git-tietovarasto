@@ -6,7 +6,7 @@ class Laskija:
         kerro(Union[int, float], Union[int, float])
     """
 
-    def summaa(self, a, b):
+    def summaa(self, *numerot):
         """Palauttaa kahden luvun summan.
 
         :param a: summan ensimmäinen luku
@@ -16,9 +16,9 @@ class Laskija:
         :return: lukujen a ja b summa
         :rtype: Union[int, float]
         """
-        return sum([a, b])
+        return sum([*numerot])
 
-    def kerro(self, a, b):
+    def kerro(self, *numerot):
         """Palauttaa kahden luvun tulon.
 
         :param a: tulon ensimmäinen luku
@@ -29,12 +29,18 @@ class Laskija:
         :rtype: Union[int, float]
         """
         tulo = 1
-        for luku in [a, b]:
+        for luku in [*numerot]:
             tulo *= luku
         return tulo
 
 
 ### Lisää MonenLaskija ja argumenttien_tulostaja tähän.
+class MonenLaskija(Laskija):
+    pass
+
+
+def argumenttien_tulostaja(avain1 = 0,**kwargs):
+    print('Argumentin', "avain1: arvo on", avain1)
 
 
 
@@ -45,15 +51,14 @@ l = Laskija()
 ml = MonenLaskija()
 
 print(l.summaa(11, 31))
-print(l.kerro(3, 12))
+#print(l.kerro(3, 12))
 print()
 print(ml.summaa(1, 2, 3, 4, 5))
-print(ml.kerro(1, 2, 3, 4, 5))
+#print(ml.kerro(1, 2, 3, 4, 5))
 print()
 print(ml.summaa(1, 2, 3, 4, 5, 6, 7))
-print(ml.kerro(1, 2, 3, 4, 5, 6 ,7))
+#print(ml.kerro(1, 2, 3, 4, 5, 6 ,7))
 print()
 argumenttien_tulostaja(eka=42, toka='foo', kolmas=[0, 1, 2])
 print()
 argumenttien_tulostaja(nimi='Tero', ika=41, kaupunki='Turku', oppilaitos='TAI')
-

@@ -2,13 +2,29 @@ import random
 import time
 
 class Olento:
+    """Luokka, joka kuvaa Olennon.
+    :ivar nimi: Olennon nimi, arvotaan
+    :type nimi: str
+    :ivar rohkeus: peikon rohkeus, arvotaan
+    :type rohkeus: int
+    :ivar katseen_voima: olennon katseen voimakkuus, arvotaan
+    :type katseen_voima: int
+   
+    Julkiset metodit
+        arvo_hurraus()
+    """
     def __init__(self, nimi, pohjarohkeus = 1, pohja_katseen_voima = 2):
+        """Konstruktori."""
         self.nimi = nimi
         self.rohkeus = random.randint(pohjarohkeus, pohjarohkeus + 3)
         self.katseen_voima = random.randint(pohja_katseen_voima, pohja_katseen_voima + 5)
 
     def arvo_hurraus(self):
-    
+    """Palauttaa satunnaisen hurraushuudahduksen.
+
+        :return: hurraava huudahdus
+        :rtype: str
+        """
         pass
     
 

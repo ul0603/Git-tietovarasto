@@ -1,6 +1,5 @@
 class Laskija:
     """Luokka, joka toteuttaa eri laskutoimituksia.
-
     Julkiset metodit:
         summaa(Union[int, float], Union[int, float])
         kerro(Union[int, float], Union[int, float])
@@ -8,7 +7,6 @@ class Laskija:
 
     def summaa(self, *numerot):
         """Palauttaa kahden luvun summan.
-
         :param a: summan ensimmäinen luku
         :type a: Union[int, float]
         :param b: summan toinen luku
@@ -20,7 +18,6 @@ class Laskija:
 
     def kerro(self, *numerot):
         """Palauttaa kahden luvun tulon.
-
         :param a: tulon ensimmäinen luku
         :type a: Union[int, float]
         :param b: tulon toinen luku
@@ -36,11 +33,40 @@ class Laskija:
 
 ### Lisää MonenLaskija ja argumenttien_tulostaja tähän.
 class MonenLaskija(Laskija):
-    pass
+    """Luokka, joka toteuttaa eri laskutoimituksia mille tahansa määrälle lukuja.
+    Julkiset metodit:
+        summaa(Union[int, float], Union[int, float])
+        kerro(Union[int, float], Union[int, float])
+    """
+
+    def summaa(self, *numerot):
+        """Palauttaa annettujen lukujen summan.
+
+        :type numerot: tuple[Union[int, float]
+        :return: numeroiden summa
+        :rtype: Union[int, float]
+        """
+        return sum(numerot)
+
+    def kerro(self, *numerot):
+        """Palauttaa annettujen luvut kerrottuna.
+
+        :param numerot: tulon numerot
+        :type numerot: tuple[Union[int, float]
+        :return: numeroiden tulo
+        :rtype: Union[int, float]
+        """
+        tulo = 1
+        for luku in [*numerot]:
+            tulo *= luku
+        return tulo
 
 
-def argumenttien_tulostaja(avain1 = 0,**kwargs):
-    print('Argumentin', "avain1: arvo on", avain1)
+def argumenttien_tulostaja(**kwargs):
+    """Tulostaa annetut tiedot"""
+    for k, v in kwargs.items():
+        print(f'Argumentin "{k}" arvo on {v}.')
+    
 
 
 
@@ -62,3 +88,4 @@ print()
 argumenttien_tulostaja(eka=42, toka='foo', kolmas=[0, 1, 2])
 print()
 argumenttien_tulostaja(nimi='Tero', ika=41, kaupunki='Turku', oppilaitos='TAI')
+

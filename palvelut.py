@@ -11,3 +11,8 @@ class Asiakas():
 class Palvelu():
     pass
 
+
+
+class ParempiPalvelu(Palvelu):
+    pass
+

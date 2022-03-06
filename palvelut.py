@@ -18,4 +18,6 @@ class Palvelu():
 
 
 class ParempiPalvelu(Palvelu):
-    pass
+    def __init__(self, tuotenimi, edut=[]):
+        super().__init__(tuotenimi)
+        self.edut=[]

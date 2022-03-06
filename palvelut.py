@@ -6,12 +6,14 @@ class Asiakas():
     def __init__(self, nimi, ika):
         self.nimi= nimi
         self.ika = ika
-        luo_nro()
+        
 
 
 
 class Palvelu():
-    pass
+    def __init__(self, tuotenimi, asiakkaat=[]):
+        self.tuotenimi=tuotenimi
+        self.asiakkaat=[]
 
 
 

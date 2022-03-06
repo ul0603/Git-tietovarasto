@@ -3,8 +3,10 @@ import random
 
 
 class Asiakas():
-    pass
-
+    def __init__(self, nimi, ika):
+        self.nimi= nimi
+        self.ika = ika
+        luo_nro()
 
 
 
@@ -15,4 +17,3 @@ class Palvelu():
 
 class ParempiPalvelu(Palvelu):
     pass
-

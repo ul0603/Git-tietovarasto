@@ -54,8 +54,8 @@ class Palvelu():
         self.tuotenimi=tuotenimi
         self.asiakkaat=[]
 
-    def _luo_asiakasrivi(Asiakas):
-        pass
+    def luo_asiakasrivi(Asiakas):
+        return f'{asiakkaat.get_nimi()},{asiakkaat.get_asiakasnro()}, on {asiakkaat.get_ika()}-vuotias'
 
     def lisaa_asiakas(self, Asiakas):
         asiakas = input("Anna Asiakas: ")
@@ -75,7 +75,7 @@ class Palvelu():
             raise ValueError ("Kannattaa antaa uusi asiakas")
 
     def tulosta_asiakkaat(self):
-        pass
+        luo_asiakasrivi()
 
 
 

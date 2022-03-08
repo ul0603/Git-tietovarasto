@@ -14,8 +14,8 @@ class Asiakas():
         try:
             if uusinimi != "":
                 self.nimi= uusinimi
-            except ValueError:
-                raise ValueError("Kannattaa antaa uusi nimi")
+        except ValueError:
+            raise ValueError("Kannattaa antaa uusi nimi")
         
 
     def get_ika(self):
@@ -25,8 +25,8 @@ class Asiakas():
         try:
             if uusi_ika != "":
                 self.ika = uusi_ika
-            except ValueError:
-                raise ValueError("Kannattaa antaa uusi ikä")
+        except ValueError:
+            raise ValueError("Kannattaa antaa uusi ikä")
         
             
     
@@ -54,27 +54,27 @@ class Palvelu():
         self.tuotenimi=tuotenimi
         self.asiakkaat=[]
 
-    def luo_asiakasrivi(Asiakas):
+    def _luo_asiakasrivi(Asiakas):
         pass
 
-    def lisaa_asiakas(Asiakas):
+    def lisaa_asiakas(self, Asiakas):
         asiakas = input("Anna Asiakas: ")
-        if asiakas = True:
-            self.asiakkaat.append(asiakas)
-        elif asiakas = False:
-            except ValueError:
-                raise ValueError ("Kannattaa antaa uusi asiakas")
+        try:
+            if asiakas == True:
+                self.asiakkaat.append(asiakas)
+        except ValueError:
+            raise ValueError ("Kannattaa antaa uusi asiakas")
             
 
-    def poista_asiakas(Asiakas):
+    def poista_asiakas(self, Asiakas):
         asiakas = input("Anna Asiakas: ")
-        if asiakas = True:
-            self.asiakkaat.remove(asiakas)
-        elif asiakas = False:
-            except ValueError:
-                raise ValueError ("Kannattaa antaa uusi asiakas")
+        try:
+            if asiakas == True:
+                self.asiakkaat.remove(asiakas)
+        except ValueError:
+            raise ValueError ("Kannattaa antaa uusi asiakas")
 
-    def tulosta_asiakkaat():
+    def tulosta_asiakkaat(self):
         pass
 
 
@@ -84,11 +84,21 @@ class ParempiPalvelu(Palvelu):
         super().__init__(tuotenimi)
         self.edut=[]
 
-    def lisaa_etu():
-        pass
+    def lisaa_etu(self, etu):
+        etu = input("Anna Etu: ")
+        try:
+            if etu == True:
+                self.edut.append(self, etu)
+        except ValueError:
+            raise ValueError ("Kannattaa antaa uusi etu")
 
-    def poista_etu():
-        pass
+    def poista_etu(self, etu):
+        etu = input("Anna Etu: ")
+        try:
+            if etu == True:
+                self.edut.remove(asiakas)
+        except ValueError:
+            raise ValueError ("Kannattaa antaa uusi etu")
 
     def tulosta_edut():
         pass

@@ -55,7 +55,7 @@ class Palvelu():
         self.asiakkaat=[]
 
     def luo_asiakasrivi(Asiakas):
-        return f'{asiakkaat.get_nimi()},{asiakkaat.get_asiakasnro()}, on {asiakkaat.get_ika()}-vuotias'
+         print(f'{Asiakas.get_nimi()},{Asiakas.get_asiakasnro()}, on {Asiakas.get_ika()}-vuotias')
 
     def lisaa_asiakas(self, Asiakas):
         asiakas = input("Anna Asiakas: ")
@@ -75,7 +75,7 @@ class Palvelu():
             raise ValueError ("Kannattaa antaa uusi asiakas")
 
     def tulosta_asiakkaat(self):
-        luo_asiakasrivi()
+        self.luo_asiakasrivi()
 
 
 
@@ -101,4 +101,4 @@ class ParempiPalvelu(Palvelu):
             raise ValueError ("Kannattaa antaa uusi etu")
 
     def tulosta_edut():
-        pass
+        print(edut)

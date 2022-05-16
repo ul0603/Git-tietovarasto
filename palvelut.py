@@ -13,8 +13,9 @@ class Asiakas():
     def __init__(self, nimi, ika):
         """Konstruktori
         """
-        self.nimi= nimi
-        self.ika = ika
+        self.nimi= str(nimi)
+        self.ika = int(ika)
+        self.asiakasnro = []
 
     def get_nimi(self):
         return self.nimi
@@ -66,7 +67,7 @@ class Asiakas():
         type nro1-nro8: int""" 
 
     def get_asiakasnro(self):
-        return asiakasnro
+        return self.asiakasnro
         """Getteri funktio joka palauttaa asiakasnumeron
         type asiakasnro: str f"""
 
@@ -76,19 +77,20 @@ class Palvelu():
     def __init__(self, tuotenimi, asiakkaat=[]):
         """Konstruktori
         """
-        self.tuotenimi=tuotenimi
-        self.asiakkaat=[]
+        self.tuotenimi = str(tuotenimi)
+        self.asiakkaat = []
 
-    def __luo_asiakasrivi(self, Asiakas):
+    def _luo_asiakasrivi(self, Asiakas):
          print(f'{Asiakas.get_nimi()},{Asiakas.get_asiakasnro()}, on {Asiakas.get_ika()}-vuotias')
+         
          """Luo asiakasrivin käyttämällä get metodeja
         Asiakas type: class
         """
 
     def lisaa_asiakas(self, Asiakas):
-        asiakas = input("Anna Asiakas: ")
+        asiakas = Asiakas
         try:
-            if asiakas == True:
+            if asiakas != None:
                 self.asiakkaat.append(asiakas)
         except ValueError:
             raise ValueError ("Kannattaa antaa uusi asiakas")
@@ -100,7 +102,7 @@ class Palvelu():
     def poista_asiakas(self, Asiakas):
         asiakas = input("Anna Asiakas: ")
         try:
-            if asiakas == True:
+            if asiakas != None:
                 self.asiakkaat.remove(asiakas)
         except ValueError:
             raise ValueError ("Kannattaa antaa uusi asiakas")
@@ -109,7 +111,8 @@ class Palvelu():
         """
 
     def tulosta_asiakkaat(self):
-        print self.luo_asiakasrivi()
+        for x in self.asiakkaat:
+            self._luo_asiakasrivi(x)
         """Tulostaa luodun asiakasrivin käyttämällä luo_asiakasrivi metodia
         """
 
@@ -119,10 +122,9 @@ class ParempiPalvelu(Palvelu):
         """Konstruktori
         """
         super().__init__(tuotenimi)
-        self.edut=[]
+        self.edut = []
 
     def lisaa_etu(self, etu):
-        etu = input("Anna Etu: ")
         try:
             if etu == True:
                 self.edut.append(self, etu)
@@ -133,7 +135,7 @@ class ParempiPalvelu(Palvelu):
         """
 
     def poista_etu(self, etu):
-        etu = input("Anna Etu: ")
+        etu = etu
         try:
             if etu == True:
                 self.edut.remove(asiakas)
@@ -143,8 +145,10 @@ class ParempiPalvelu(Palvelu):
         type etu: str
         """
 
-    def tulosta_edut():
-        print(edut)
+    def tulosta_edut(self):
+        for etu in self.edut:
+            print(etu)
         """Tulostaa edut listan
         type edut: list
         """
+

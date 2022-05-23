@@ -4,11 +4,13 @@ import random
 
 
 class Asiakas():
-    """Luokka, joka kuvaa Asiakkaan.
-    :ivar nimi: Asiakkaan nimi
-    :type nimi: str
-    :ivar ika: Asiakkaan ikä
-    :type ika: int
+    """Luokka asettaa asiakkaalle numeron, nimen, iän ja luo asiakasnumeron.
+    Julkiset methodit
+        set_nimi()
+        set_ika()
+        get_nimi()
+        get_ika()
+        get_asiakasnumero()
     """
     
     def __init__(self, nimi, ika):

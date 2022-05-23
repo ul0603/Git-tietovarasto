@@ -16,7 +16,7 @@ class Asiakas():
         """
         self.__nimi= str(nimi)
         self.__ika = int(ika)
-        self.__asiakasnro = []
+        self.__asiakasnro = self.__luo_nro()
 
     def get_nimi(self):
         return self.__nimi
@@ -52,25 +52,27 @@ class Asiakas():
             
     
     def __luo_nro(self):
-
-        nro1 = random.randint(0, 9)
-        nro2 = random.randint(0, 9)
-        nro3 = random.randint(0, 9)
-        nro4 = random.randint(0, 9)
-        nro5 = random.randint(0, 9)
-        nro6 = random.randint(0, 9)
-        nro7 = random.randint(0, 9)
-        nro8 = random.randint(0, 9)
-
-        self.__asiakasnro = f'{nro1}{nro2}-{nro3}{nro4}{nro5}-{nro6}{nro7}{nro8}'
-        return self.__asiakasnro
-        """Funktio joka palauttaa 8 eri numeroa satunnaisesti 0 ja 9 väliltä
+        """Muodostaa satunnaisen asiakasnumeron
+        :ivar numerolista: lista jossa satunnaisesti generoitu asiakasnumero
+        :type numerolista: int[]
+        """
+        nro1 = []
+        nro2 = []
+        nro3 = []
+     
+        nro1.append(random.randint(0, 99))
+        nro2.append(random.randint(0, 999))
+        nro3.append(random.randint(0, 999))
+        
+        numerolista = f'{nro1}-{nro2}-{nro3}'
+        return numerolista
+        """Funktio joka palauttaa 3 eri numeroa satunnaisesti 0-99 väliltä nro1 kohdalla ja 0-999 väliltä nro2 ja 3 kohdalla väliltä
         type nro1-nro8: int""" 
 
     def get_asiakasnro(self):
         return self.__asiakasnro
         """Getteri funktio joka palauttaa asiakasnumeron
-        type asiakasnro: str f"""
+        type asiakasnro: f-str """
 
 
 
@@ -90,11 +92,10 @@ class Palvelu():
 
     def lisaa_asiakas(self, Asiakas):
         asiakas = Asiakas
-        try:
-            if asiakas != None:
-                self.__asiakkaat.append(asiakas)
-        except ValueError:
-            raise ValueError ("Kannattaa antaa uusi asiakas")
+        if asiakas == False:
+            raise ValueError ("Asiakas on annettava")
+        else:
+            self.__asiakkaat.append(asiakas)
         """Lisää annetun asiakkaan asiakkaat listaan ja nostaa ValueErrorin jos ei anneta asiakasta
         type asiakas:: str
         """
@@ -109,6 +110,7 @@ class Palvelu():
             pass
         
     def tulosta_asiakkaat(self):
+        print("\nTuotteen " + self.tuotenimi + " asiakkaat ovat:")
         for x in self.__asiakkaat:
             self._luo_asiakasrivi(x)
         """Tulostaa luodun asiakasrivin käyttämällä luo_asiakasrivi metodia
@@ -123,11 +125,10 @@ class ParempiPalvelu(Palvelu):
         self.__edut = []
 
     def lisaa_etu(self, etu):
-        try:
-            if etu != None:
-                self.__edut.append(etu)
-        except ValueError:
+        if etu == False:
             raise ValueError ("Kannattaa antaa uusi etu")
+        else:
+            self.__edut.append(etu)
         """Lisää edun edut listaan ja jos ei anneta arvoa nostaa ValueErrorin
         type etu: str
         """
@@ -135,15 +136,20 @@ class ParempiPalvelu(Palvelu):
     def poista_etu(self, etu):
         etu = etu
         try:
-            if etu != None:
+            if etu == False:
+                raise ValueError ("Ei voi poistaa:" + etu + ", Ei ole listassa")
+            else:
                 self.__edut.remove(etu)
         except:
             pass
+            
+            
 
     def tulosta_edut(self):
-        print("Tuotteen " + self.tuotenimi + " edut ovat:")
+        print("\nTuotteen " + self.tuotenimi + " edut ovat:")
         for etu in self.__edut:
             print (f'{etu}')
             """Tulostaa _edut listasta edut
             type _edut: list
             """
+

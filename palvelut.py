@@ -14,7 +14,13 @@ class Asiakas():
     """
     
     def __init__(self, nimi, ika):
-        """Konstruktori
+        """Asiakas-luokan konstruktori, jossa annetaan muuttujat, jotka peritään myöhemmin.
+        :ivar asiakasnumero: asiakkaan asiakasnumero
+        :type asiakasnumero: int[]
+        :ivar nimi: asiakkaan nimi
+        :type nimi: str
+        :ivar ika: asiakkaan ikä
+        :type ika: int
         """
         self.__nimi= str(nimi)
         self.__ika = int(ika)

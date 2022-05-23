@@ -25,14 +25,13 @@ class Asiakas():
         """
 
     def set_nimi(self, uusinimi):
-        try:
-            if uusinimi != "":
-                self.__nimi= uusinimi
-        except ValueError:
-            raise ValueError("Kannattaa antaa uusi nimi")
-        """Setteri funktio joka asettaa nimen arvon tilalle uuden nimen
-        type uusinimi: str
-        """
+            
+            if uusinimi == '':
+                raise ValueError("Kannattaa antaa uusi nimi.")
+            else:
+                self.__nimi = uusinimi
+            """Setteri funktio joka asettaa nimen arvon tilalle uuden nimen
+            type uusinimi: str """
         
 
     def get_ika(self):
@@ -92,8 +91,8 @@ class Palvelu():
 
     def lisaa_asiakas(self, Asiakas):
         asiakas = Asiakas
-        if asiakas == False:
-            raise ValueError ("Asiakas on annettava")
+        if asiakas == None:
+            raise ValueError ("Kannattaa antaa asiakas.")
         else:
             self.__asiakkaat.append(asiakas)
         """Lisää annetun asiakkaan asiakkaat listaan ja nostaa ValueErrorin jos ei anneta asiakasta
@@ -152,4 +151,3 @@ class ParempiPalvelu(Palvelu):
             """Tulostaa _edut listasta edut
             type _edut: list
             """
-

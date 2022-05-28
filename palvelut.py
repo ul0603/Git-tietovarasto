@@ -125,7 +125,7 @@ class Palvelu():
                 self.__asiakkaat.remove(asiakas)
         except:
             pass
-        """Poistaa kutsuttuna asiakkaan asiakkaat-listasta. Jos ei anneta asiakasta ohitetaan virhe.
+        """Poistaa annetun asiakkaan asiakkaat-listasta. Jos ei anneta asiakasta ohitetaan virhe.
         """
         
     def tulosta_asiakkaat(self):
@@ -137,8 +137,10 @@ class Palvelu():
 
 
 class ParempiPalvelu(Palvelu):
+    """Luokka, jossa käsitellään tuotenimiä ja etuja.
+    """
     def __init__(self, tuotenimi, edut=[]):
-        """Konstruktori
+        """Konstruktorissa peritään tuotenimi Palvelu luokalta ja luodaan edut lista.
         """
         super().__init__(tuotenimi)
         self.__edut = []
@@ -161,6 +163,8 @@ class ParempiPalvelu(Palvelu):
                 self.__edut.remove(etu)
         except:
             pass
+        """Poistaa annetun edun edut listasta ja jos etua ei anneta ohitetaan virhe.
+        """
             
             
 

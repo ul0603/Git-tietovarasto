@@ -5,7 +5,7 @@ import random
 
 class Asiakas():
     """Luokka asettaa asiakkaalle numeron, nimen, iän ja luo asiakasnumeron.
-    Julkiset methodit
+        Julkiset metodit
         set_nimi()
         set_ika()
         get_nimi()
@@ -59,7 +59,7 @@ class Asiakas():
             
     
     def __luo_nro(self):
-        """Muodostaa satunnaisen asiakasnumeron
+        """Muodostaa kolmesta koknaisluvusta muodostuvan satunnaisen asiakasnumeron
         :ivar numerolista: lista jossa satunnaisesti generoitu asiakasnumero
         :type numerolista: int[]
         """
@@ -84,8 +84,18 @@ class Asiakas():
 
 
 class Palvelu():
+    """Luokka, joka hallitsee asiakas listaa.
+        Julkiset metodit
+        lisaa_asiakas()
+        poista_asiakas()
+        tulosta_asiakkaat()
+    """
     def __init__(self, tuotenimi, asiakkaat=[]):
-        """Konstruktori
+        """Konstruktori, jossa luodaan asikkaiden tiedoille lista.
+        :ivar __asiakkaat: Muuttujaan tallennetaan kaikki asiakkaiden tiedot.
+        :type __asiakkaat: list
+        :ivar tuotenimi: Tuotenimi tallennetaan tähän muuttujaan.
+        :type tuotenimi: str
         """
         self.tuotenimi = str(tuotenimi)
         self.__asiakkaat = []
@@ -115,6 +125,8 @@ class Palvelu():
                 self.__asiakkaat.remove(asiakas)
         except:
             pass
+        """Poistaa kutsuttuna asiakkaan asiakkaat-listasta. Jos ei anneta asiakasta ohitetaan virhe.
+        """
         
     def tulosta_asiakkaat(self):
         print("\nTuotteen " + self.tuotenimi + " asiakkaat ovat:")

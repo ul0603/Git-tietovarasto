@@ -27,34 +27,35 @@ class Asiakas():
         self.__asiakasnro = self.__luo_nro()
 
     def get_nimi(self):
-        return self.__nimi
         """Getteri funktio joka palauttaa nimen
         type nimi: str
         """
+        return self.__nimi
 
     def set_nimi(self, uusinimi):
+        """Setteri funktio joka asettaa nimen arvon tilalle uuden nimen
+            type uusinimi: str """
             
             if uusinimi == '':
                 raise ValueError("Kannattaa antaa uusi nimi.")
             else:
                 self.__nimi = uusinimi
-            """Setteri funktio joka asettaa nimen arvon tilalle uuden nimen
-            type uusinimi: str """
-        
 
     def get_ika(self):
-        return self.__ika
         """Getteri funktio joka palauttaa Asiakkaan iän
         type ika: str"""
+        return self.__ika
+       
 
     def set_ika(self, uusi_ika):
+        """Setteri funktio joka asettaa iän arvon tilalle uuden iän
+        type uusi_ika: str"""
         try:
             if uusi_ika != "":
                 self.__ika = uusi_ika
         except ValueError:
             raise ValueError("Kannattaa antaa uusi ikä")
-        """Setteri funktio joka asettaa iän arvon tilalle uuden iän
-        type uusi_ika: str"""
+        
         
             
     
@@ -73,13 +74,12 @@ class Asiakas():
         
         numerolista = f'{nro1}-{nro2}-{nro3}'
         return numerolista
-        """Funktio joka palauttaa 3 eri numeroa satunnaisesti 0-99 väliltä nro1 kohdalla ja 0-999 väliltä nro2 ja 3 kohdalla väliltä
-        type nro1-nro8: int""" 
-
+    
     def get_asiakasnro(self):
-        return self.__asiakasnro
         """Getteri funktio joka palauttaa asiakasnumeron
-        type asiakasnro: f-str """
+        type asiakasnro: f-string """
+        return self.__asiakasnro
+   
 
 
 
@@ -101,39 +101,42 @@ class Palvelu():
         self.__asiakkaat = []
 
     def _luo_asiakasrivi(self, Asiakas):
-         print(f'{Asiakas.get_nimi()},{Asiakas.get_asiakasnro()}, on {Asiakas.get_ika()}-vuotias')
-         
-         """Luo asiakasrivin käyttämällä get metodeja
+        """Luo asiakasrivin käyttämällä get metodeja
         Asiakas type: class
         """
+         print(f'{Asiakas.get_nimi()},{Asiakas.get_asiakasnro()}, on {Asiakas.get_ika()}-vuotias')
+         
 
     def lisaa_asiakas(self, Asiakas):
+        """Lisää annetun asiakkaan asiakkaat listaan ja nostaa ValueErrorin jos ei anneta asiakasta
+        type asiakas:: str
+        """
         asiakas = Asiakas
         if asiakas == None:
             raise ValueError ("Kannattaa antaa asiakas.")
         else:
             self.__asiakkaat.append(asiakas)
-        """Lisää annetun asiakkaan asiakkaat listaan ja nostaa ValueErrorin jos ei anneta asiakasta
-        type asiakas:: str
-        """
+        
             
 
     def poista_asiakas(self, Asiakas):
+        """Poistaa annetun asiakkaan asiakkaat-listasta. Jos ei anneta asiakasta ohitetaan virhe.
+        """
         asiakas = input("Anna Asiakas: ")
         try:
             if asiakas != None:
                 self.__asiakkaat.remove(asiakas)
         except:
             pass
-        """Poistaa annetun asiakkaan asiakkaat-listasta. Jos ei anneta asiakasta ohitetaan virhe.
-        """
+        
         
     def tulosta_asiakkaat(self):
+        """Tulostaa luodun asiakasrivin käyttämällä luo_asiakasrivi metodia
+        """
         print("\nTuotteen " + self.tuotenimi + " asiakkaat ovat:")
         for x in self.__asiakkaat:
             self._luo_asiakasrivi(x)
-        """Tulostaa luodun asiakasrivin käyttämällä luo_asiakasrivi metodia
-        """
+        
 
 
 class ParempiPalvelu(Palvelu):
@@ -146,15 +149,17 @@ class ParempiPalvelu(Palvelu):
         self.__edut = []
 
     def lisaa_etu(self, etu):
+        """Lisää edun edut listaan ja jos ei anneta arvoa nostaa ValueErrorin
+        type etu: str
+        """
         if etu == False:
             raise ValueError ("Kannattaa antaa uusi etu")
         else:
             self.__edut.append(etu)
-        """Lisää edun edut listaan ja jos ei anneta arvoa nostaa ValueErrorin
-        type etu: str
-        """
 
     def poista_etu(self, etu):
+        """Poistaa annetun edun edut listasta ja jos etua ei anneta ohitetaan virhe.
+        """
         etu = etu
         try:
             if etu == False:
@@ -163,15 +168,13 @@ class ParempiPalvelu(Palvelu):
                 self.__edut.remove(etu)
         except:
             pass
-        """Poistaa annetun edun edut listasta ja jos etua ei anneta ohitetaan virhe.
-        """
             
             
 
     def tulosta_edut(self):
+        """Tulostaa _edut listasta edut
+            type _edut: list
+            """
         print("\nTuotteen " + self.tuotenimi + " edut ovat:")
         for etu in self.__edut:
             print (f'{etu}')
-            """Tulostaa _edut listasta edut
-            type _edut: list
-            """

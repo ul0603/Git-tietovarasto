@@ -1,0 +1,13 @@
+Docstringit kirjoitetaan heti def-rivin alle.(DONE)
+
+Parametrien tarkistukset on tehty kömpelösti.
+
+Asiakasnumero luodaan väärin - tee joka append samaan listaan.
+
+Vasta get_asiakasnumero palutta asiakasnumerosta tehdyn merkkijonon.
+
+Asiakas muuttujan nimenä pitäisi kirjoittaa pienellä, isolla vain luokan nimenä.
+
+_luo asiakasrivi pitäisi palauttaa eikä tulostaa.
+
+poista_etu ja poista_asiakas: if-lausetta ei tarvita, except-lauseen pitäisi käsitellä vain tietyn tyyppiset poikkeukset.
